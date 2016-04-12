@@ -6,6 +6,7 @@ public class Jeux {
     private Grille g;
     private Pion p1;
     private Pion p2;
+    private  boolean on;
 
     //CONSTRUCTEUR
     public Jeux(Config config){
@@ -50,21 +51,15 @@ public class Jeux {
 
     public void tour(){
         Scanner sc = new Scanner(System.in);
-        int ligne, colonne;
-
-        while (true){
+        this.on = true;
+        while (this.on){
             actionPion(sc, p1);
-            g.afficher();
-            System.out.println(g.getNbEmptyC());
             actionPion(sc, p2);
-            g.afficher();
-            System.out.println(g.getNbEmptyC());
         }
     }
 
     private void actionPion(Scanner sc, Pion p) {
-        int ligne;
-        int colonne;
+        int ligne, colonne;
         System.out.println("Joueur " + p.getCoul() + " : Entrez la coordonnee de la ligne");
         ligne = sc.nextInt();
         System.out.println("Joueur " + p.getCoul() + " : Entrez la coordonnee de la colonne");
@@ -72,6 +67,16 @@ public class Jeux {
         if(!g.deplacer(ligne, colonne, p)){
             System.out.println("Hay carramba, encore raté !!!");
             actionPion(sc, p);
+        }
+        isFinished();
+    }
+
+    private void isFinished() {
+        g.afficher();
+        System.out.println(g.getNbEmptyC());
+        if (g.getNbEmptyC() == 0){
+            System.out.println("partie terminée");
+            this.on = false;
         }
     }
 }

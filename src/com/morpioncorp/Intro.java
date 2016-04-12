@@ -26,7 +26,7 @@ public class Intro{
         accept = sc.next().charAt(0);
         if (Character.toLowerCase(accept) == 'y'){
 
-            System.out.print( "/!\\ ce message s’autodétruira dans 5 secondes :");
+            System.out.print( "/!\\ ce message s’autodétruira dans ");
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 int seconds = 6;

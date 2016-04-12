@@ -29,6 +29,9 @@ public class Grille{
     //METHODES
     public void afficher(){
         System.out.println();
+        for(int i = 0 ; i <= nbCol; i++)
+            System.out.print(i + " | ");
+        System.out.print("\n");
         for(int i=0;i<nbLig;i++){
             System.out.print(i+1);
             for(int j=0;j<nbCol;j++){
