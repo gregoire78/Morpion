@@ -63,16 +63,40 @@ public class Grille{
         }
     }
 
-    public boolean ruleInGrille(int l, int c, Pion p){
-        l = l - 1;
-        c = c - 1;
-        // si pion est a al première ligne
-        if(Grille[0][1] == ' ' || Grille[0][1] == p.getCoul() && Grille[0][2] == ' ' || Grille[0][2] == p.getCoul()){
+    boolean ruleInGrille(int l, int c, Pion p) {
+        // Vérifie la ligne 1 - éléments 0, 1 et 2 du tableau
+        if (Grille[0][0] == p.getCoul() && Grille[0][1] == p.getCoul() && Grille[0][2] == p.getCoul()){
             System.out.println(p.getCoul() + " Gagne !!");
-            return false;
-        }
-        else{
             return true;
+        } else if (Grille[1][0] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[1][2] == p.getCoul()){
+            System.out.println(p.getCoul() + " Gagne !!");
+            return true;
+        } else if (Grille[2][0] == p.getCoul() && Grille[2][1] == p.getCoul() && Grille[2][2] == p.getCoul()) {
+            System.out.println(p.getCoul() + " Gagne !!");
+            return true;
+        }
+
+
+        else if (Grille[0][0] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[2][2] == p.getCoul()) {
+            System.out.println(p.getCoul() + " Gagne !!");
+            return true;
+        } else if (Grille[0][2] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[2][0] == p.getCoul()) {
+            System.out.println(p.getCoul() + " Gagne !!");
+            return true;
+        }
+
+        if (Grille[0][0] == p.getCoul() && Grille[1][0] == p.getCoul() && Grille[2][0] == p.getCoul()){
+            System.out.println(p.getCoul() + " Gagne !!");
+            return true;
+        } else if (Grille[0][1] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[2][1] == p.getCoul()){
+            System.out.println(p.getCoul() + " Gagne !!");
+            return true;
+        } else if (Grille[0][2] == p.getCoul() && Grille[1][2] == p.getCoul() && Grille[2][2] == p.getCoul()) {
+            System.out.println(p.getCoul() + " Gagne !!");
+            return true;
+        }
+        else {
+            return false;
         }
     }
 

@@ -18,6 +18,7 @@ public class Menu {
         System.out.println("1. PLAY");
         System.out.println("2. OPTIONS");
         System.out.println("3. CREDIT");
+        System.out.println("4. EXIT (emergency)");
         System.out.println("==============================");
         Scanner sc = new Scanner(System.in);
         int menuID = sc.nextInt();
@@ -34,6 +35,9 @@ public class Menu {
             System.out.println("Mélodie Vu");
             System.out.println("==============================");
             this.afficher();
+        }
+        else if(menuID == 4){
+            System.exit(0);
         }
     }
 }
