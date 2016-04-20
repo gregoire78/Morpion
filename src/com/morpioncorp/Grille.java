@@ -1,5 +1,7 @@
 package com.morpioncorp;
 
+import java.util.ArrayList;
+
 public class Grille{
 
     private int nbEmptyC;
@@ -58,6 +60,19 @@ public class Grille{
                 System.out.println("Erreur, il y a deja un pion sur cette case !");
                 return false;
             }
+        }
+    }
+
+    public boolean ruleInGrille(int l, int c, Pion p){
+        l = l - 1;
+        c = c - 1;
+        // si pion est a al première ligne
+        if(Grille[0][1] == ' ' || Grille[0][1] == p.getCoul() && Grille[0][2] == ' ' || Grille[0][2] == p.getCoul()){
+            System.out.println(p.getCoul() + " Gagne !!");
+            return false;
+        }
+        else{
+            return true;
         }
     }
 

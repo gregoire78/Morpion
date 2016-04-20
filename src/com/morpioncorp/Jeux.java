@@ -68,6 +68,7 @@ public class Jeux {
             System.out.println("Hay carramba, encore raté !!!");
             actionPion(sc, p);
         }
+        g.ruleInGrille(ligne, colonne, p);
         isFinished();
     }
 
@@ -77,6 +78,7 @@ public class Jeux {
         if (g.getNbEmptyC() == 0){
             System.out.println("partie terminée");
             this.on = false;
+            new Menu( new Config()).afficher();
         }
     }
 }

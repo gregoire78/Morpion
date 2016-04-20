@@ -28,5 +28,12 @@ public class Menu {
         else if(menuID == 2){
             config.afficher();
         }
+        else if(menuID == 3){
+            System.out.println("======== CREDIT  =========");
+            System.out.println("Grégoire Joncour");
+            System.out.println("Mélodie Vu");
+            System.out.println("==============================");
+            this.afficher();
+        }
     }
 }
