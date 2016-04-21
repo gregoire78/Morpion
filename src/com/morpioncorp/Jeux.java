@@ -1,4 +1,5 @@
 package com.morpioncorp;
+import javax.sound.sampled.LineUnavailableException;
 import java.util.Scanner;
 
 public class Jeux {
@@ -108,6 +109,11 @@ public class Jeux {
 
     boolean ruleInGrille(Pion p) {
         if (g.winRules(p)) {
+            try {
+                SoundUtils.tone(1500,1000);
+            } catch (LineUnavailableException e) {
+                e.printStackTrace();
+            }
             System.out.println(p.getCoul() + " : Morpion accompli !!\nBienvenue dans L'agence Morpion Impossible Mr." + p.getCoul());
             return true;
         }
