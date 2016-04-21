@@ -86,6 +86,7 @@ public class Grille{
     private boolean winRules(Pion p) {
         int gligne = 0;
         int gcol = 0;
+        int gdiagun = 0;
         for(int i =0; i < Grille.length; i++){
             for(int j = 0 ; j < Grille.length; j++){
                 if(Grille[j][i] == p.getCoul()){
@@ -94,10 +95,15 @@ public class Grille{
                 if(Grille[i][j] == p.getCoul()){
                     gligne++;
                 }
-                if (gcol==Grille.length || gligne==Grille.length){
-                    return true;
-                }
+
+                if (gcol==Grille.length || gligne==Grille.length) return true;
             }
+            if(Grille[i][i] == p.getCoul()){
+                gdiagun++;
+            }
+            if (gdiagun==Grille.length) return true;
+            gcol=0;
+            gligne=0;
         }
         return false;
     }

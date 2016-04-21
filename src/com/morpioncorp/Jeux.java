@@ -40,8 +40,8 @@ public class Jeux {
         System.out.println("Veuillez choisir votre couleur joueur 2 : ");
         couleurP2 = sc.next().charAt(0); //Astuce pour lire un char, car methode de lecture de char inexistante dans la classe Scanner
         if (couleurP2 == couleurP1){
-            System.out.println("Veuillez choisir une autre couleur !");
-            setPionJ2(sc, couleurP1);
+            System.out.println("Veuillez choisir une autre couleur joueur 2 !");
+            couleurP2 = sc.next().charAt(0);
         }
         System.out.println("Joueur 2 vous recevez les pions '" + couleurP2 + "'");
         Pion p2 = new Pion(couleurP2);
