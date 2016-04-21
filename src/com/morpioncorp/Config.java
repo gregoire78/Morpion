@@ -18,7 +18,7 @@ public class Config {
         Scanner sc = new Scanner(System.in);
         System.out.println("\t===Config du morpion===");
 
-        System.out.println("Veuillez entrer le nombre de lignes:");
+        System.out.println("Veuillez entrer le nombre de lignes (> 3):");
         ligne = sc.nextInt();
         colonne = ligne;
 

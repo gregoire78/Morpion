@@ -63,47 +63,47 @@ public class Grille{
         }
     }
 
-    boolean ruleInGrille(int l, int c, Pion p) {
-
-        // Vérifie la ligne 1 - éléments 0, 1 et 2 du tableau
+    boolean ruleInGrille(Pion p) {
         if (winRules(p)) {
-            System.out.println(p.getCoul() + " Gagne !!");
+            System.out.println(p.getCoul() + " : Mission accompli vous avez anéantis l'ennemi !!");
             return true;
         }else {
             return false;
         }
-//        if (
-//            Grille[0][0] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[2][2] == p.getCoul() || // diagonales
-//            Grille[0][2] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[2][0] == p.getCoul())
-//        {
-//            System.out.println(p.getCoul() + " Gagne !!");
-//            return true;
-//        } else {
-//            return false;
-//        }
     }
 
     private boolean winRules(Pion p) {
         int gligne = 0;
         int gcol = 0;
         int gdiagun = 0;
+        int gdiagdeux = 0;
+        int gl = Grille.length-1;
         for(int i =0; i < Grille.length; i++){
             for(int j = 0 ; j < Grille.length; j++){
+                // verification pour les colonnes
                 if(Grille[j][i] == p.getCoul()){
                     gcol++;
                 }
+                // verification pour les lignes
                 if(Grille[i][j] == p.getCoul()){
                     gligne++;
                 }
-
-                if (gcol==Grille.length || gligne==Grille.length) return true;
+                // verification pour la diagonales de droite
+                if (Grille[gl][j] == p.getCoul()){
+                    gdiagdeux++;
+                    gl--;
+                }
+                // verification pour la diagonale de gauche
+                if(Grille[j][j] == p.getCoul()){
+                    gdiagun++;
+                }
+                // si une ligne est pleine
+                if (gcol==Grille.length || gligne==Grille.length || gdiagdeux==Grille.length || gdiagun==Grille.length ) return true;
             }
-            if(Grille[i][i] == p.getCoul()){
-                gdiagun++;
-            }
-            if (gdiagun==Grille.length) return true;
+            gdiagun = 0;
             gcol=0;
             gligne=0;
+            gdiagdeux=0;
         }
         return false;
     }

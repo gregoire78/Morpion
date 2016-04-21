@@ -68,13 +68,13 @@ public class Jeux {
             System.out.println("Hay carramba, encore raté !!!");
             actionPion(sc, p);
         }
-        isFinished(ligne, colonne, p);
+        isFinished(p);
     }
 
-    private void isFinished(int ligne, int colonne, Pion p) {
+    private void isFinished(Pion p) {
         g.afficher();
         //System.out.println(g.getNbEmptyC());
-        if (g.getNbEmptyC() == 0 || g.ruleInGrille(ligne, colonne, p)){
+        if (g.getNbEmptyC() == 0 || g.ruleInGrille(p)){
             System.out.println("partie terminée");
             this.on = false;
             new Menu( new Config()).afficher();
