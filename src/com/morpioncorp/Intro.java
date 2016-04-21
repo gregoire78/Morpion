@@ -19,7 +19,10 @@ public class Intro{
         char accept;
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("MORPION IMPOSSIBLE");
+        System.out.println(
+                "                                                                    ,-.--.\n" +
+                "  *._____________________MORPION IMPOSSIBLE_______________________,' (Bomb)\n" +
+                "                                                                      `--'");
         System.out.print(
             "L’agence mission impossible recrute un nouvel espion.\n" +
             "Vous avez été sélectionné comme candidat.\n" +
