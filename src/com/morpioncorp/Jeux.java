@@ -74,10 +74,22 @@ public class Jeux {
     private void isFinished(Pion p) {
         g.afficher();
         //System.out.println(g.getNbEmptyC());
-        if (g.getNbEmptyC() == 0 || g.ruleInGrille(p)){
+        if (ruleInGrille(p)){
             System.out.println("partie terminée");
             this.on = false;
             new Menu( new Config()).afficher();
         }
+    }
+
+    boolean ruleInGrille(Pion p) {
+        if (g.winRules(p)) {
+            System.out.println(p.getCoul() + " : Mission accompli vous avez anéantis l'ennemi !!");
+            return true;
+        }
+        else if (g.getNbEmptyC() == 0){
+            System.out.println("Durée de la mission écoulée.");
+            return true;
+        }
+        return false;
     }
 }

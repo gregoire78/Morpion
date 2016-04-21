@@ -39,6 +39,7 @@ public class Intro{
                         timer.cancel();
                     }
                     else{
+                        java.awt.Toolkit.getDefaultToolkit().beep();
                         System.out.print(seconds - (i %seconds)+" ");
                     }
                 }

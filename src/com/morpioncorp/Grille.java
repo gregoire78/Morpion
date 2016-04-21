@@ -63,16 +63,7 @@ public class Grille{
         }
     }
 
-    boolean ruleInGrille(Pion p) {
-        if (winRules(p)) {
-            System.out.println(p.getCoul() + " : Mission accompli vous avez anéantis l'ennemi !!");
-            return true;
-        }else {
-            return false;
-        }
-    }
-
-    private boolean winRules(Pion p) {
+    public boolean winRules(Pion p) {
         int gligne = 0;
         int gcol = 0;
         int gdiagun = 0;
@@ -100,6 +91,7 @@ public class Grille{
                 // si une ligne est pleine
                 if (gcol==Grille.length || gligne==Grille.length || gdiagdeux==Grille.length || gdiagun==Grille.length ) return true;
             }
+            gl = Grille.length-1;
             gdiagun = 0;
             gcol=0;
             gligne=0;
