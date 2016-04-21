@@ -1,5 +1,6 @@
 package com.morpioncorp;
 
+import javax.sound.sampled.LineUnavailableException;
 import java.io.IOException;
 import java.util.Scanner;
 import java.lang.*;
@@ -42,10 +43,22 @@ public class Intro{
                     i++;
                     if(i % seconds == 0){
                         System.out.println("\nBOOOOOOOOMMMMMMMMMMM!!!!!");
+                        // ajout du son
+                        try {
+                            SoundUtils.tone(1100,1000);
+                        } catch (LineUnavailableException e) {
+                            e.printStackTrace();
+                        }
                         timer.cancel();
                     }
                     else{
-                        java.awt.Toolkit.getDefaultToolkit().beep();
+                        //java.awt.Toolkit.getDefaultToolkit().beep();
+                        // ajout du son
+                        try {
+                            SoundUtils.tone(1000,500);
+                        } catch (LineUnavailableException e) {
+                            e.printStackTrace();
+                        }
                         System.out.print(seconds - (i %seconds)+" ");
                     }
                 }
