@@ -38,7 +38,7 @@ public class Jeux {
      */
     private Pion setPionJ1(Scanner sc) {
         char couleurP1;
-        System.out.println("Veuillez choisir votre couleur candidat 1 : ");
+        System.out.println("Veuillez choisir votre nom de code candidat 1 : ");
         couleurP1 = sc.next().charAt(0); //Astuce pour lire un char, car methode de lecture de char inexistante dans la classe Scanner
         System.out.println("candidat 1 vous recevez les pions '" + couleurP1 + "'");
         Pion p1 = new Pion(couleurP1);
@@ -53,10 +53,10 @@ public class Jeux {
      */
     private Pion setPionJ2(Scanner sc, char couleurP1) {
         char couleurP2;
-        System.out.println("Veuillez choisir votre couleur candidat 2 : ");
+        System.out.println("Veuillez choisir votre nom de code candidat 2 : ");
         couleurP2 = sc.next().charAt(0); //Astuce pour lire un char, car methode de lecture de char inexistante dans la classe Scanner
         if (couleurP2 == couleurP1){
-            System.out.println("Veuillez choisir une autre couleur candidat 2 !");
+            System.out.println("Veuillez choisir une autre nom de code candidat 2 !");
             couleurP2 = sc.next().charAt(0);
         }
         System.out.println("candidat 2 vous recevez les pions '" + couleurP2 + "'");
@@ -110,7 +110,7 @@ public class Jeux {
     boolean ruleInGrille(Pion p) {
         if (g.winRules(p)) {
             try {
-                SoundUtils.tone(1500,1000);
+                SoundUtils.tone(800,500);
             } catch (LineUnavailableException e) {
                 e.printStackTrace();
             }
