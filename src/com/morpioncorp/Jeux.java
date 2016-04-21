@@ -37,35 +37,35 @@ public class Jeux {
      */
     private Pion setPionJ1(Scanner sc) {
         char couleurP1;
-        System.out.println("Veuillez choisir votre couleur joueur 1 : ");
+        System.out.println("Veuillez choisir votre couleur candidat 1 : ");
         couleurP1 = sc.next().charAt(0); //Astuce pour lire un char, car methode de lecture de char inexistante dans la classe Scanner
-        System.out.println("Joueur 1 vous recevez les pions '" + couleurP1 + "'");
+        System.out.println("candidat 1 vous recevez les pions '" + couleurP1 + "'");
         Pion p1 = new Pion(couleurP1);
         return p1;
     }
 
     /**
-     * method qui permet de set le pion du joueur 2
+     * method qui permet de set le pion du candidat 2
      * @param sc
      * @param couleurP1
      * @return Pion
      */
     private Pion setPionJ2(Scanner sc, char couleurP1) {
         char couleurP2;
-        System.out.println("Veuillez choisir votre couleur joueur 2 : ");
+        System.out.println("Veuillez choisir votre couleur candidat 2 : ");
         couleurP2 = sc.next().charAt(0); //Astuce pour lire un char, car methode de lecture de char inexistante dans la classe Scanner
         if (couleurP2 == couleurP1){
-            System.out.println("Veuillez choisir une autre couleur joueur 2 !");
+            System.out.println("Veuillez choisir une autre couleur candidat 2 !");
             couleurP2 = sc.next().charAt(0);
         }
-        System.out.println("Joueur 2 vous recevez les pions '" + couleurP2 + "'");
+        System.out.println("candidat 2 vous recevez les pions '" + couleurP2 + "'");
         Pion p2 = new Pion(couleurP2);
         return p2;
     }
 
 
     /**
-     * method qui permet la gestion des tours pour les joueurs
+     * method qui permet la gestion des tours pour les candidats
      */
     public void tour(){
         Scanner sc = new Scanner(System.in);
@@ -82,9 +82,9 @@ public class Jeux {
      */
     private void actionPion(Scanner sc, Pion p) {
         int ligne, colonne;
-        System.out.println("Joueur " + p.getCoul() + " : Entrez la coordonnee de la ligne");
+        System.out.println("candidat " + p.getCoul() + " : Entrez la coordonnee de la ligne");
         ligne = sc.nextInt();
-        System.out.println("Joueur " + p.getCoul() + " : Entrez la coordonnee de la colonne");
+        System.out.println("candidat " + p.getCoul() + " : Entrez la coordonnee de la colonne");
         colonne = sc.nextInt();
         if(!g.deplacer(ligne, colonne, p)){
             System.out.println("Hay carramba, encore raté !!!");
