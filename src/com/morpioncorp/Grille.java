@@ -63,6 +63,11 @@ public class Grille{
         }
     }
 
+    /**
+     * method qui permet de detecter quelle ligne est rempli par un pion
+     * @param p
+     * @return bool
+     */
     public boolean winRules(Pion p) {
         int gligne = 0;
         int gcol = 0;

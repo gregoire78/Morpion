@@ -12,6 +12,9 @@ public class Menu {
         this.config = config;
     }
 
+    /**
+     * methode qui affiche le menu
+     */
     public void afficher(){
         // création de l'affichage du menu
         System.out.println("======== MENU DU JEU  =========");

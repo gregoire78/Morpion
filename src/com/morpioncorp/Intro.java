@@ -12,6 +12,9 @@ import static java.lang.System.exit;
  */
 public class Intro{
 
+    /**
+     * method affiche l'introduction
+     */
     public void afficher(){
         char accept;
         Scanner sc = new Scanner(System.in);
@@ -28,7 +31,7 @@ public class Intro{
 
             System.out.print( "/!\\ ce message s’autodétruira dans ");
             Timer timer = new Timer();
-            timer.schedule(new TimerTask() {
+            timer.schedule(new TimerTask() { // timer qui permet de faire le compte à rebours
                 int seconds = 6;
                 int i = 0;
                 @Override

@@ -8,6 +8,10 @@ public class Jeux {
     private Pion p2;
     private  boolean on;
 
+    /**
+     * constructeur du jeux
+     * @param config
+     */
     //CONSTRUCTEUR
     public Jeux(Config config){
         Scanner sc = new Scanner(System.in);
@@ -26,6 +30,11 @@ public class Jeux {
         g.afficher();
     }
 
+    /**
+     * setter le pion 1
+     * @param sc
+     * @return
+     */
     private Pion setPionJ1(Scanner sc) {
         char couleurP1;
         System.out.println("Veuillez choisir votre couleur joueur 1 : ");
@@ -35,6 +44,12 @@ public class Jeux {
         return p1;
     }
 
+    /**
+     * method qui permet de set le pion du joueur 2
+     * @param sc
+     * @param couleurP1
+     * @return Pion
+     */
     private Pion setPionJ2(Scanner sc, char couleurP1) {
         char couleurP2;
         System.out.println("Veuillez choisir votre couleur joueur 2 : ");
@@ -49,6 +64,9 @@ public class Jeux {
     }
 
 
+    /**
+     * method qui permet la gestion des tours pour les joueurs
+     */
     public void tour(){
         Scanner sc = new Scanner(System.in);
         this.on = true;
@@ -58,6 +76,10 @@ public class Jeux {
         }
     }
 
+    /**
+     * @param sc
+     * @param p
+     */
     private void actionPion(Scanner sc, Pion p) {
         int ligne, colonne;
         System.out.println("Joueur " + p.getCoul() + " : Entrez la coordonnee de la ligne");
@@ -71,6 +93,9 @@ public class Jeux {
         isFinished(p);
     }
 
+    /**
+     * @param p
+     */
     private void isFinished(Pion p) {
         g.afficher();
         //System.out.println(g.getNbEmptyC());
