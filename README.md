@@ -1,6 +1,4 @@
-# Morpion
-morpion en java
-                                                                    ,-.--.
+                                                                   ,-.--.
   *._____________________MORPION IMPOSSIBLE_______________________,' (Bomb)
                                                                       `--'
 L’agence mission impossible recrute un nouvel espion.
