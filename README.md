@@ -1,6 +1,6 @@
   ```
                                                                     ,-.--.
-  *._____________________MORPION IMPOSSIBLE_______________________,' (Bomb)
+  *._____________________MORPION_IMPOSSIBLE_______________________,' (Bomb)
                                                                       `--'
 L’agence mission impossible recrute un nouvel espion.
 Vous avez été sélectionné comme candidat.
