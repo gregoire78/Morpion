@@ -108,11 +108,11 @@ public class Jeux {
 
     boolean ruleInGrille(Pion p) {
         if (g.winRules(p)) {
-            System.out.println(p.getCoul() + " : Mission accompli vous avez anéantis l'ennemi !!");
+            System.out.println(p.getCoul() + " : Morpion accompli !!\nBienvenue dans L'agence Morpion Impossible Mr." + p.getCoul());
             return true;
         }
         else if (g.getNbEmptyC() == 0){
-            System.out.println("Durée de la mission écoulée.");
+            System.out.println("Egalité . Merci de votre participation");
             return true;
         }
         return false;
