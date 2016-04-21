@@ -12,8 +12,8 @@ public class Grille{
     //CONSTRUCTEUR
     public Grille(int n, int p){
         nbLig = n;
-        nbCol = p;
-        nbEmptyC = n*p;
+        nbCol = n;
+        nbEmptyC = n*n;
         Grille = new char[nbLig][nbCol];
 
         for(int i=0;i<nbLig;i++){
@@ -64,40 +64,42 @@ public class Grille{
     }
 
     boolean ruleInGrille(int l, int c, Pion p) {
+
         // Vérifie la ligne 1 - éléments 0, 1 et 2 du tableau
-        if (Grille[0][0] == p.getCoul() && Grille[0][1] == p.getCoul() && Grille[0][2] == p.getCoul()){
+        if (winRules(p)) {
             System.out.println(p.getCoul() + " Gagne !!");
             return true;
-        } else if (Grille[1][0] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[1][2] == p.getCoul()){
-            System.out.println(p.getCoul() + " Gagne !!");
-            return true;
-        } else if (Grille[2][0] == p.getCoul() && Grille[2][1] == p.getCoul() && Grille[2][2] == p.getCoul()) {
-            System.out.println(p.getCoul() + " Gagne !!");
-            return true;
-        }
-
-
-        else if (Grille[0][0] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[2][2] == p.getCoul()) {
-            System.out.println(p.getCoul() + " Gagne !!");
-            return true;
-        } else if (Grille[0][2] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[2][0] == p.getCoul()) {
-            System.out.println(p.getCoul() + " Gagne !!");
-            return true;
-        }
-
-        if (Grille[0][0] == p.getCoul() && Grille[1][0] == p.getCoul() && Grille[2][0] == p.getCoul()){
-            System.out.println(p.getCoul() + " Gagne !!");
-            return true;
-        } else if (Grille[0][1] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[2][1] == p.getCoul()){
-            System.out.println(p.getCoul() + " Gagne !!");
-            return true;
-        } else if (Grille[0][2] == p.getCoul() && Grille[1][2] == p.getCoul() && Grille[2][2] == p.getCoul()) {
-            System.out.println(p.getCoul() + " Gagne !!");
-            return true;
-        }
-        else {
+        }else {
             return false;
         }
+//        if (
+//            Grille[0][0] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[2][2] == p.getCoul() || // diagonales
+//            Grille[0][2] == p.getCoul() && Grille[1][1] == p.getCoul() && Grille[2][0] == p.getCoul())
+//        {
+//            System.out.println(p.getCoul() + " Gagne !!");
+//            return true;
+//        } else {
+//            return false;
+//        }
+    }
+
+    private boolean winRules(Pion p) {
+        int gligne = 0;
+        int gcol = 0;
+        for(int i =0; i < Grille.length; i++){
+            for(int j = 0 ; j < Grille.length; j++){
+                if(Grille[j][i] == p.getCoul()){
+                    gcol++;
+                }
+                if(Grille[i][j] == p.getCoul()){
+                    gligne++;
+                }
+                if (gcol==Grille.length || gligne==Grille.length){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }

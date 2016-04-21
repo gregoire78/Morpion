@@ -73,7 +73,7 @@ public class Jeux {
 
     private void isFinished(int ligne, int colonne, Pion p) {
         g.afficher();
-        System.out.println(g.getNbEmptyC());
+        //System.out.println(g.getNbEmptyC());
         if (g.getNbEmptyC() == 0 || g.ruleInGrille(ligne, colonne, p)){
             System.out.println("partie terminée");
             this.on = false;

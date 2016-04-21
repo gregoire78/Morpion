@@ -20,9 +20,7 @@ public class Config {
 
         System.out.println("Veuillez entrer le nombre de lignes:");
         ligne = sc.nextInt();
-
-        System.out.println("Veuillez entrer le nombre de colonnes:");
-        colonne = sc.nextInt();
+        colonne = ligne;
 
         new Menu(this).afficher();
     }
